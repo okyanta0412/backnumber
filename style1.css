@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    background-image: url("./img/bn1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body::after{
+    content: "";
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: 500vh;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+}
+
+.title{
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    font-size: 2rem;
+    opacity: 0;
+}
+
+.title.active{
+    opacity: 1;
+    transition: all 3s;
+}
+
+section{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.img-wrap{
+    position: relative;
+    top: 50%;
+    width: 30%;
+    height: 40%;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.img-wrap.active{
+    width: 40vw;
+    opacity: 1;
+    transition: opacity 1s, width 2s;
+
+}
+
+.img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    transform: scale(1.1);
+}
+
+.img-wrap.title.active{
+    transform: scale(1);
+    transition: 1s ease-out;
+}
+
+p{
+    position: absolute;
+    font-size: 1rem;
+    top: 65%;
+    z-index: 2;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+p.active{
+    opacity: 1;
+    transition: opacity 3s;
+}
+
+h2{
+    position: absolute;
+    font-size: 2.3rem;
+    top: 70%;
+    z-index: 2;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+h2.active{
+    opacity: 1;
+    transition: opacity 3s;
+}
+
+p1{
+    position: absolute;
+    font-size: 1rem;
+    top: 90%;
+    z-index: 2;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+p1.active{
+    opacity: 1;
+    transition: opacity 3s;
+}
+
+p2{
+    position: absolute;
+    font-size: 1rem;
+    top: 90%;
+    z-index: 2;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+p2.active{
+    opacity: 1;
+    transition: opacity 3s;
+}
+
+p3{
+    position: absolute;
+    font-size: 1rem;
+    top: 78%;
+    z-index: 2;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+p3.active{
+    opacity: 1;
+    transition: opacity 3s;
+}
+
+h{
+    position: absolute;
+    font-size: 2.3rem;
+    top: 80%;
+    z-index: 2;
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: all 0.2s;
+}
+
+h.active{
+    opacity: 1;
+    transition: opacity 3s;
+}
+
+
+body{
+    font-weight: 400;
+}
+
+main{
+    padding: 50px;
+}
+
+nav{
+    display: block;
+    width: 220px;
+    position: fixed;
+    background-color: #ffffff;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    transition: all 0.5s;
+    z-index: 3;
+    opacity: 0;
+}
+
+.open nav{
+    left: 0;
+    opacity: 1;
+}
+
+nav .inner{
+    padding: 25px;
+
+}
+
+nav .inner ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .inner ul li{
+    margin: 0;
+    border-bottom: 1px solid #333;
+}
+
+nav .inner ul li a{
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    padding: 1rem;
+    transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover{
+    background-color: #e4e4e4;
+}
+
+.toggle-btn{
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.toggle-btn span{
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.5s;
+    border-radius: 4px;
+}
+
+.toggle-btn span:nth-child(1){
+    top: 4px;
+}
+
+.toggle-btn span:nth-child(2){
+    top: 14px;
+}
+
+.toggle-btn span:nth-child(3){
+    bottom: 4px;
+}
+
+#mask{
+    display: none;
+    transition: all 0.5s;
+}
+
+.open .toggle-btn span{
+    background-color: #fff;
+
+}
+
+.open .toggle-btn span:nth-child(1){
+    transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle-btn span:nth-child(2){
+    opacity: 0;
+}
+
+.open .toggle-btn span:nth-child(3){
+    transform: translateY(-10px) rotate(315deg);
+}
+
+.open #mask{
+    display: block;
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.footer{
+    margin-top: 736px;
+    color: #000;
+}
+
+.pp_link{
+    text-align: right;
+    width: 1250px;
+}
+
+.icon{
+    border-style: none;
+}
+
+.icon:hover{
+    opacity: 0.6;
+    transition: 0.8s;
+}
+
+.icon img{
+    width: 100px;
+    height: auto;
+}
